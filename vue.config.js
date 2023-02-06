@@ -2,8 +2,11 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: '',
-
   pluginOptions: {
     cordovaPath: 'src-cordova',
+  },
+  devServer: {
+    proxy: {},
+    port: 715,
   },
 })
