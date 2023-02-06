@@ -1,9 +1,13 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  transpileDependencies: true,
+  transpileDependencies: ['quasar'],
   publicPath: '',
   pluginOptions: {
     cordovaPath: 'src-cordova',
+    quasar: {
+      importStrategy: 'kebab',
+      rtlSupport: false,
+    },
   },
   devServer: {
     proxy: {},
