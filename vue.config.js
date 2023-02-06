@@ -7,6 +7,6 @@ module.exports = defineConfig({
   },
   devServer: {
     proxy: {},
-    port: 715,
+    port: 22715,
   },
 })

@@ -4,8 +4,15 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    redirect: '/weekly',
     component: () =>
       import(/* webpackChunkName: "Home" */ '../components/Home.vue'),
+  },
+  {
+    path: '/weekly',
+    name: 'Weekly',
+    component: () =>
+      import(/* webpackChunkName: "Weekly" */ '../components/Weekly.vue'),
   },
 ]
 
