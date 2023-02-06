@@ -10,4 +10,13 @@ module.exports = defineConfig({
     port: 3050,
     historyApiFallback: true,
   },
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `
+          @import "~@/assets/scss/variable.scss";
+        `,
+      },
+    },
+  },
 })
