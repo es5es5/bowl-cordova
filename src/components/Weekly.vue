@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div class="calendar-controls">
+  <div id="weekly">
+    <div class="calendar-controls" v-if="true">
       <div v-if="message" class="notification is-success">{{ message }}</div>
 
       <div class="box">
@@ -174,12 +174,12 @@ export default {
   data() {
     return {
       /* Show the current month, and give it some fake items to show */
-      showDate: this.thisMonth(1),
+      showDate: new Date(),
       message: '',
       startingDayOfWeek: 0,
       disablePast: false,
       disableFuture: false,
-      displayPeriodUom: 'month',
+      displayPeriodUom: 'week',
       displayPeriodCount: 1,
       displayWeekNumbers: false,
       showTimes: true,
@@ -193,75 +193,17 @@ export default {
       useTodayIcons: false,
       items: [
         {
-          id: 'e0',
-          startDate: '2018-01-05',
-        },
-        {
           id: 'e1',
-          startDate: this.thisMonth(15, 18, 30),
-        },
-        {
-          id: 'e2',
-          startDate: this.thisMonth(15),
-          title: 'Single-day item with a long title',
-        },
-        {
-          id: 'e3',
-          startDate: this.thisMonth(7, 9, 25),
-          endDate: this.thisMonth(10, 16, 30),
-          title: 'Multi-day item with a long title and times',
-        },
-        {
-          id: 'e4',
-          startDate: this.thisMonth(20),
+          startDate: '2023-01-29',
           title: 'My Birthday!',
-          classes: 'birthday',
+          classes: 'a',
           url: 'https://en.wikipedia.org/wiki/Birthday',
         },
         {
-          id: 'e5',
-          startDate: this.thisMonth(5),
-          endDate: this.thisMonth(12),
-          title: 'Multi-day item',
-          classes: 'purple',
-        },
-        {
-          id: 'foo',
-          startDate: this.thisMonth(29),
-          title: 'Same day 1',
-        },
-        {
-          id: 'e6',
-          startDate: this.thisMonth(29),
-          title: 'Same day 2',
-          classes: 'orange',
-        },
-        {
-          id: 'e7',
-          startDate: this.thisMonth(29),
-          title: 'Same day 3',
-        },
-        {
-          id: 'e8',
-          startDate: this.thisMonth(29),
-          title: 'Same day 4',
-          classes: 'orange',
-        },
-        {
-          id: 'e9',
-          startDate: this.thisMonth(29),
-          title: 'Same day 5',
-        },
-        {
-          id: 'e10',
-          startDate: this.thisMonth(29),
-          title: 'Same day 6',
-          classes: 'orange',
-        },
-        {
-          id: 'e11',
-          startDate: this.thisMonth(29),
-          title: 'Same day 7',
+          id: 'e4',
+          startDate: '2023-01-29',
+          title: 'My Birthday!',
+          classes: 'b',
         },
       ],
     }
@@ -359,34 +301,21 @@ export default {
 </script>
 
 <style>
-html,
-body {
-  height: 100%;
-  margin: 0;
-  background-color: #f7fcff;
+.a {
+  height: 10rem;
 }
-#app {
+#weekly {
   display: flex;
   flex-direction: row;
-  font-family: Calibri, sans-serif;
-  width: 95vw;
   min-width: 30rem;
-  max-width: 100rem;
   min-height: 40rem;
   margin-left: auto;
   margin-right: auto;
 }
 .calendar-controls {
-  margin-right: 1rem;
-  min-width: 14rem;
-  max-width: 14rem;
 }
 .calendar-parent {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  width: 100%;
   max-height: 80vh;
   background-color: white;
 }
